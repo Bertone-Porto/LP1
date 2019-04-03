@@ -16,7 +16,7 @@ int main(){
 
 	for(i=0;i<50;i++){
 		if(notas[i] >= media){
-				soma += 1;
+			soma += 1;
 		}
 	}
 	printf("qtd de notas acima da media: %d\n", soma);
