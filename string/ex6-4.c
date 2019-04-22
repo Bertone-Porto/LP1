@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 void strlen2(char* s1){ //retorna a qtd de caracteres
   int i=0, cont=0;
