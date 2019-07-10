@@ -9,12 +9,12 @@ struct Pessoa{
 };
 
 struct Prof{
-  struct Pessoa* pessoa;
+  struct Pessoa pessoa;
   char inst[5];
 };
 
 struct Aluno{
-  struct Pessoa* pessoa;
+  struct Pessoa pessoa;
   int cr;
 };
 
@@ -34,13 +34,13 @@ void preenche_pessoa(struct Pessoa* pessoa){
 }
 
 void preenche_prof(struct Prof* prof){
-  preenche_pessoa(prof->pessoa);
+  preenche_pessoa(&prof->pessoa);
   printf("Unidade: ");
   scanf("%s", prof->inst);
 }
 
 void preenche_aluno(struct Aluno* aluno){
-  preenche_pessoa(aluno->pessoa);
+  preenche_pessoa(&aluno->pessoa);
   printf("CR: ");
   scanf("%d", &aluno->cr);
 }
@@ -62,9 +62,9 @@ void preenche(struct Membro* m){
 
 int main(void) {
   struct Membro membro;
-  membro.sub = PROF;
-  //printf("%d\n", membro.sub);
+  membro.sub = ALUNO;
   preenche(&membro);
+  printf("%s %d %d\n", membro.x.aluno->pessoa.nome, membro.x.aluno->pessoa.idade, membro.x.aluno->cr);
   
   return 0;
 }
